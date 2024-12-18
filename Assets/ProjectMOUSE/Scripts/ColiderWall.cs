@@ -10,12 +10,14 @@ public class ColiderWall : MonoBehaviour
     public Material RedMaterial;
     public Material YellowMaterial;
 
+    public LevelControl LevelControlScript;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.transform.tag == m_tag)
         {
             gameObject.GetComponent<Renderer>().material = YellowMaterial;
+            LevelControlScript.StartPuzzle2();
         }
     }
     private void OnTriggerExit(Collider other)
