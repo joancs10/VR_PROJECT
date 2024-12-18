@@ -1015,7 +1015,7 @@ GameObject:
   m_Component:
   - component: {fileID: 958769730}
   m_Layer: 0
-  m_Name: Labertnt
+  m_Name: Laberint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1030,7 +1030,7 @@ Transform:
   m_GameObject: {fileID: 958769729}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.011999998, y: 1.45, z: -0.32}
+  m_LocalPosition: {x: -0.011999998, y: 1.45, z: -0.2728}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1457,8 +1457,8 @@ Transform:
   m_GameObject: {fileID: 1264740553}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.085, y: -0.07221532, z: 0.0004}
-  m_LocalScale: {x: 0.089113, y: 1, z: 0.0064942087}
+  m_LocalPosition: {x: -0.0232, y: -0.0028234, z: 0.0004}
+  m_LocalScale: {x: 0.013848159, y: 0.44765884, z: 0.0064942087}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 958769730}
@@ -1504,7 +1504,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 5c5431fbd5fb0e748b01fc2bc5892b7d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2012,8 +2012,8 @@ Transform:
   m_GameObject: {fileID: 1877468305}
   serializedVersion: 2
   m_LocalRotation: {x: -0.70710707, y: -0, z: -0, w: 0.70710653}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.03178739, y: 0.0018272457, z: 0.03178739}
+  m_LocalPosition: {x: 9.3132e-10, y: 0, z: 0}
+  m_LocalScale: {x: 0.012906634, y: 0.0007419166, z: 0.012906634}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 958769730}
