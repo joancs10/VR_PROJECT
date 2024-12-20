@@ -5387,7 +5387,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc3f2bce2ff4b714291854be701c4186, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_tag: Wall
+  m_tag1: Wall
+  m_tag2: Exit
   RedMaterial: {fileID: 2100000, guid: 26338b68832e47a43a183b765ba2e731, type: 2}
   YellowMaterial: {fileID: 2100000, guid: c8add6f38703801479f8612a60aee5ce, type: 2}
   LevelControlScript: {fileID: 1267031912}
