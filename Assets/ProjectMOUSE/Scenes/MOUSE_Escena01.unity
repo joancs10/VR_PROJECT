@@ -5533,6 +5533,7 @@ MonoBehaviour:
   raycastLayerMask:
     serializedVersion: 2
     m_Bits: 64
+  targetSize: 0.01
 --- !u!136 &1877468307
 CapsuleCollider:
   m_ObjectHideFlags: 0
