@@ -14,6 +14,8 @@ public class ColiderWall : MonoBehaviour
     private string m_tag4; // Quart tag
     [SerializeField]
     private string m_tag5; // Cinquè tag
+    [SerializeField]
+    private string m_tag6; // Sisè tag
 
     public Material RedMaterial;
     public Material YellowMaterial;
@@ -51,6 +53,12 @@ public class ColiderWall : MonoBehaviour
             // Si l'objecte té el segon tag, realitzem una altra acció (exemple de canvi de color)
             gameObject.GetComponent<Renderer>().material = RedMaterial;
             LevelControlScript.StartPuzzle5();  // Executa una acció diferent per al segon tag
+        }
+        else if (other.transform.CompareTag(m_tag6))
+        {
+            // Si l'objecte té el segon tag, realitzem una altra acció (exemple de canvi de color)
+            gameObject.GetComponent<Renderer>().material = RedMaterial;
+            LevelControlScript.StartPuzzle1();  // Executa una acció diferent per al segon tag
         }
     }
 
