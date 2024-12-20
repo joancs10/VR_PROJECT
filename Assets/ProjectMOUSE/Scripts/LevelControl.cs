@@ -5,7 +5,7 @@ using UnityEngine;
 public class LevelControl : MonoBehaviour
 {
 
-    public GameObject Puzzle1, Puzzle2, Puzzle3, Puzzle4;
+    public GameObject Puzzle1, Puzzle2, Puzzle3, Puzzle4, Puzzle5;
     public Light LightComponent;
 
     // Start is called before the first frame update
@@ -32,6 +32,7 @@ public class LevelControl : MonoBehaviour
         Puzzle2.SetActive(false);
         Puzzle3.SetActive(false);
         Puzzle4.SetActive(false);
+        Puzzle5.SetActive(false);
     }
     public void StartPuzzle2()
     {
@@ -39,6 +40,7 @@ public class LevelControl : MonoBehaviour
         Puzzle2.SetActive(true);
         Puzzle3.SetActive(false);
         Puzzle4.SetActive(false);
+        Puzzle5.SetActive(false);
     }
     public void StartPuzzle3()
     {
@@ -46,6 +48,7 @@ public class LevelControl : MonoBehaviour
         Puzzle2.SetActive(false);
         Puzzle3.SetActive(true);
         Puzzle4.SetActive(false);
+        Puzzle5.SetActive(false);
     }
     public void StartPuzzle4()
     {
@@ -53,7 +56,15 @@ public class LevelControl : MonoBehaviour
         Puzzle2.SetActive(false);
         Puzzle3.SetActive(false);
         Puzzle4.SetActive(true);
+        Puzzle5.SetActive(false);
     }
-
+    public void StartPuzzle5()
+    {
+        Puzzle1.SetActive(false);
+        Puzzle2.SetActive(false);
+        Puzzle3.SetActive(false);
+        Puzzle4.SetActive(false);
+        Puzzle5.SetActive(true);
+    }
 
 }
