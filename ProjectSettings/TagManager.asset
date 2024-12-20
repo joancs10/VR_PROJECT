@@ -7,6 +7,9 @@ TagManager:
   - Anchor
   - Wall
   - Exit
+  - Exit2
+  - Exit3
+  - Exit4
   layers:
   - Default
   - TransparentFX

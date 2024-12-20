@@ -1078,8 +1078,8 @@ GameObject:
   - component: {fileID: 239090619}
   - component: {fileID: 239090618}
   m_Layer: 0
-  m_Name: Exit
-  m_TagString: Exit
+  m_Name: Exit3
+  m_TagString: Exit3
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2444,7 +2444,7 @@ GameObject:
   - component: {fileID: 784482845}
   - component: {fileID: 784482844}
   m_Layer: 0
-  m_Name: Exit
+  m_Name: Exit4
   m_TagString: Exit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3214,8 +3214,8 @@ GameObject:
   - component: {fileID: 1079994582}
   - component: {fileID: 1079994581}
   m_Layer: 0
-  m_Name: Exit
-  m_TagString: Exit
+  m_Name: Exit2
+  m_TagString: Exit2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5389,6 +5389,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_tag1: Wall
   m_tag2: Exit
+  m_tag3: Exit2
+  m_tag4: Exit3
   RedMaterial: {fileID: 2100000, guid: 26338b68832e47a43a183b765ba2e731, type: 2}
   YellowMaterial: {fileID: 2100000, guid: c8add6f38703801479f8612a60aee5ce, type: 2}
   LevelControlScript: {fileID: 1267031912}
