@@ -4027,6 +4027,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Puzzle1: {fileID: 868321743}
   Puzzle2: {fileID: 219101129}
+  Puzzle3: {fileID: 585346132}
+  Puzzle4: {fileID: 1088215027}
   LightComponent: {fileID: 0}
 --- !u!4 &1267031913
 Transform:
