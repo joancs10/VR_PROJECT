@@ -58,7 +58,7 @@ public class ColiderWall : MonoBehaviour
         {
             // Si l'objecte té el segon tag, realitzem una altra acció (exemple de canvi de color)
             gameObject.GetComponent<Renderer>().material = RedMaterial;
-            LevelControlScript.StartPuzzle1();  // Executa una acció diferent per al segon tag
+            LevelControlScript.StartEnding();  // Executa una acció diferent per al segon tag
         }
     }
 

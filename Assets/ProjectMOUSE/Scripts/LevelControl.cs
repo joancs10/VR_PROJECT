@@ -67,4 +67,9 @@ public class LevelControl : MonoBehaviour
         Puzzle5.SetActive(true);
     }
 
+    public void StartEnding()
+    {
+        // fer lo del video final
+    }
+
 }
