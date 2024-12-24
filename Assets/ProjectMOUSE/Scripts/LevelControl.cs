@@ -6,7 +6,7 @@ public class LevelControl : MonoBehaviour
 {
 
     public GameObject Puzzle1, Puzzle2, Puzzle3, Puzzle4, Puzzle5;
-    public Light LightComponent;
+    public Light LightComponent, WallLight1;
 
     // Start is called before the first frame update
     void Start()
@@ -33,6 +33,10 @@ public class LevelControl : MonoBehaviour
         Puzzle3.SetActive(false);
         Puzzle4.SetActive(false);
         Puzzle5.SetActive(false);
+        if (WallLight1 != null)
+        {
+            WallLight1.enabled = false; // Desactiva la llum
+        }
     }
     public void StartPuzzle2()
     {
@@ -58,6 +62,14 @@ public class LevelControl : MonoBehaviour
         Puzzle4.SetActive(true);
         Puzzle5.SetActive(false);
     }
+
+    public void WallLightActivation()
+    {
+        if (WallLight1 != null)
+        {
+            WallLight1.enabled = true; // Activa la llum
+        }
+    }
     public void StartPuzzle5()
     {
         Puzzle1.SetActive(false);
@@ -65,11 +77,6 @@ public class LevelControl : MonoBehaviour
         Puzzle3.SetActive(false);
         Puzzle4.SetActive(false);
         Puzzle5.SetActive(true);
-    }
-
-    public void StartEnding()
-    {
-        // fer lo del video final
     }
 
 }

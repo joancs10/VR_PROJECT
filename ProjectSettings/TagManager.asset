@@ -11,6 +11,7 @@ TagManager:
   - Exit3
   - Exit4
   - Exit5
+  - ActivateWallLight1
   layers:
   - Default
   - TransparentFX

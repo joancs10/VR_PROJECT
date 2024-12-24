@@ -5,7 +5,7 @@ using UnityEngine;
 public class ColiderWall : MonoBehaviour
 {
     [SerializeField]
-    private string m_tag1; // Primer tag
+    private string m_tag1; // Primer tag (Walls)
     [SerializeField]
     private string m_tag2; // Segon tag
     [SerializeField]
@@ -15,7 +15,9 @@ public class ColiderWall : MonoBehaviour
     [SerializeField]
     private string m_tag5; // Cinquè tag
     [SerializeField]
-    private string m_tag6; // Sisè tag
+    private string m_tag6; // Sisè tag (Llums paret)
+    [SerializeField]
+    private string m_tag7; // Setè tag 
 
     public Material RedMaterial;
     public Material YellowMaterial;
@@ -58,7 +60,13 @@ public class ColiderWall : MonoBehaviour
         {
             // Si l'objecte té el segon tag, realitzem una altra acció (exemple de canvi de color)
             gameObject.GetComponent<Renderer>().material = RedMaterial;
-            LevelControlScript.StartEnding();  // Executa una acció diferent per al segon tag
+            LevelControlScript.WallLightActivation();  // Executa una acció diferent per al segon tag
+        }
+        else if (other.transform.CompareTag(m_tag7))
+        {
+            // Si l'objecte té el segon tag, realitzem una altra acció (exemple de canvi de color)
+            gameObject.GetComponent<Renderer>().material = RedMaterial;
+            LevelControlScript.StartPuzzle1();  // Executa una acció diferent per al segon tag
         }
     }
 
