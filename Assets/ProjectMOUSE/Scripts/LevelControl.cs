@@ -35,7 +35,7 @@ public class LevelControl : MonoBehaviour
         Puzzle5.SetActive(false);
         if (WallLight1 != null)
         {
-            WallLight1.enabled = false; // Desactiva la llum
+            WallLight1.enabled = false; // Desactiva la llum del Wall
         }
     }
     public void StartPuzzle2()
@@ -67,7 +67,7 @@ public class LevelControl : MonoBehaviour
     {
         if (WallLight1 != null)
         {
-            WallLight1.enabled = true; // Activa la llum
+            WallLight1.enabled = true; // Activa la llum del Wall
         }
     }
     public void StartPuzzle5()

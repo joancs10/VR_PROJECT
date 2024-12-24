@@ -23,6 +23,7 @@ public class ColiderWall : MonoBehaviour
     public Material YellowMaterial;
 
     public LevelControl LevelControlScript;
+    public LightControl LightControlScript;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -31,6 +32,7 @@ public class ColiderWall : MonoBehaviour
             // Si l'objecte té el primer tag, canviem el material a Yellow
             gameObject.GetComponent<Renderer>().material = YellowMaterial;
             LevelControlScript.StartPuzzle1();  // Executa l'acció corresponent al primer tag
+            LightControlScript.TurnOffLightsByLayer();
         }
         else if (other.transform.CompareTag(m_tag2))
         {
