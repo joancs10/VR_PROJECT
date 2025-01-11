@@ -5,8 +5,11 @@ using UnityEngine;
 
 public class LightControl : MonoBehaviour
 {
+    public GameObject canvasWin; // Referencia al GameObject que queremos activar
+    public GameObject canvasFailed;
     public LayerMask lightLayer, lightLayerB; // Layer mask for the controllable lights
-
+    public LevelControl LevelControlScript;
+    
     void Start()
     {
         // Find all light components in the scene
@@ -23,6 +26,8 @@ public class LightControl : MonoBehaviour
     // Function to turn off lights in the specified layer
     public void TurnOffLightsByLayer()
     {
+        LevelControlScript.disabledLevels();
+        canvasFailed.SetActive(true);
         // Find all light components in the scene
         Light[] lights = FindObjectsOfType<Light>();
 
@@ -50,6 +55,8 @@ public class LightControl : MonoBehaviour
     private IEnumerator TurnOnLightsAfterDelay(float delay)
     {
         yield return new WaitForSeconds(delay); // Wait for the specified delay
+        canvasFailed.SetActive(false);   
+        LevelControlScript.StartPuzzle1();
 
         // Find all light components in the scene
         Light[] lights = FindObjectsOfType<Light>();
