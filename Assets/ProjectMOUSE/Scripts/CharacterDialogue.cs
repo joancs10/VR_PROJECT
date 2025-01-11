@@ -12,7 +12,7 @@ public class CharacterDialogue : MonoBehaviour
     public float timeBetweenLines = 3f;    // Temps entre cada frase
     public float moveForwardSpeed = 0.01f;  // Velocitat amb la qual el personatge es mou cap endavant (més lent)
     public float maxDistanceForward = 5f;  // Distància màxima que el personatge es mourà cap endavant
-    public float disappearDelay = 5f;      // Temps després del qual el personatge desapareix (en segons)
+    public float disappearDelay = 0f;      // Temps després del qual el personatge desapareix (en segons)
 
     private Vector3 initialPosition;       // Posició inicial del personatge
 
@@ -37,8 +37,7 @@ public class CharacterDialogue : MonoBehaviour
         yield return new WaitForSeconds(delayTime);
 
         // Mostra el Canvas
-        dialoguePanel.SetActive(true);
-
+        dialoguePanel.SetActive(false);
         // Inicia el diàleg
         StartCoroutine(StartDialogue());
     }
@@ -70,6 +69,7 @@ public class CharacterDialogue : MonoBehaviour
 
             // Espera el temps definit abans de passar a la següent frase
             yield return new WaitForSeconds(timeBetweenLines);
+            
         }
 
         // Desactiva el panel (i el text) al final del diàleg
