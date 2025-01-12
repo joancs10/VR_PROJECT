@@ -11,6 +11,8 @@ public class CanvasController : MonoBehaviour
     public GameObject canvasFailed; // Referencia al GameObject que queremos activar
     private Vector3 lastMousePosition;
     private bool isActivated = false;
+    public AudioSource maze;
+    private bool hasPlayed = false;
 
     void Start()
     {
@@ -25,12 +27,13 @@ public class CanvasController : MonoBehaviour
 
         // Guardamos la posición inicial del ratón
         lastMousePosition = Input.mousePosition;
+        
     }
 
     void Update()
     {
         // Comprobamos si el ratón se ha movido
-        if (Input.mousePosition != lastMousePosition)
+        if (Input.mousePosition != lastMousePosition && !hasPlayed)
         {
             // Si el ratón se ha movido y el objeto no está activado
             if (!isActivated && objectToActivate != null)
@@ -39,16 +42,24 @@ public class CanvasController : MonoBehaviour
 
             }
 
+            if (maze != null && !maze.isPlaying)
+            {
+                maze.Play(); // Reproduce el audio
+                hasPlayed = true; 
+            }
+
             // Actualizamos la última posición del ratón
             lastMousePosition = Input.mousePosition;
+            
         }
 
     }
+
     IEnumerator loadingScreen()
     {
             canvasStart.SetActive(false); // Activamos el objeto
             canvasLoading.SetActive(true); // Activamos el objeto
-            yield return new WaitForSeconds(3f);
+            yield return new WaitForSeconds(4f);
             canvasLoading.SetActive(false); // Activamos el objeto
             objectToActivate.SetActive(true); // Activamos el objeto
             isActivated = true; // Marcamos que el objeto ya está activado

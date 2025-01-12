@@ -9,7 +9,8 @@ public class LightControl : MonoBehaviour
     public GameObject canvasFailed;
     public LayerMask lightLayer, lightLayerB; // Layer mask for the controllable lights
     public LevelControl LevelControlScript;
-    
+    public AudioSource audioSource;
+
     void Start()
     {
         // Find all light components in the scene
@@ -27,6 +28,7 @@ public class LightControl : MonoBehaviour
     public void TurnOffLightsByLayer()
     {
         LevelControlScript.disabledLevels();
+        audioSource.Play();
         canvasFailed.SetActive(true);
         // Find all light components in the scene
         Light[] lights = FindObjectsOfType<Light>();
@@ -55,7 +57,7 @@ public class LightControl : MonoBehaviour
     private IEnumerator TurnOnLightsAfterDelay(float delay)
     {
         yield return new WaitForSeconds(delay); // Wait for the specified delay
-        canvasFailed.SetActive(false);   
+        canvasFailed.SetActive(false);
         LevelControlScript.StartPuzzle1();
 
         // Find all light components in the scene
