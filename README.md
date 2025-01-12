@@ -1,6 +1,6 @@
 # VR_PROJECT
-INSTRUCCIONS D'US:
 
+INSTRUCCIONS D'US:
 Conectar les VR al ordinador mitjançant MetaQuest
 Obrir l'arxiu .exe
 Posar-te les ulleres
