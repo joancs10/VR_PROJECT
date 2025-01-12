@@ -5,33 +5,48 @@ using UnityEngine;
 public class MouseDotCylinder : MonoBehaviour
 {
     [SerializeField]
-    private Camera ExternalCamera;  // La c‡mera des de la qual es veur‡ el cilindre
+    private Camera ExternalCamera;  // La c√†mera des de la qual es veur√† el cilindre
     [SerializeField]
-    private GameObject m_targetObject;  // Objecte que es mou amb el raig del ratolÌ
+    private GameObject m_targetObject;  // Objecte que es mou amb el raig del ratol√≠
     [SerializeField]
-    private LayerMask raycastLayerMask;  // Mask per limitar les superfÌcies amb les que interactua el raig
+    private LayerMask raycastLayerMask;  // Mask per limitar les superf√≠cies amb les que interactua el raig
 
     [SerializeField]
-    private float targetSize = 0.5f; // Tamany desitjat del cilindre en unitats de l'escala de la c‡mera
+    private float targetSize = 0.5f; // Tamany desitjat del cilindre en unitats de l'escala de la c√†mera
+
+    private bool isHitObjectActive = true; // Indica si el "hit" est√† activat o desactivat
+    private Collider m_targetCollider; // Refer√®ncia al col¬∑lisionador de l'objecte que es mou
+
+    void Start()
+    {
+        // Obtenim el col¬∑lisionador de l'objecte al comen√ßar
+        m_targetCollider = m_targetObject.GetComponent<Collider>();
+    }
 
     void Update()
     {
-        // LlanÁar un raig des de la posiciÛ del ratolÌ
-        Ray ray = ExternalCamera.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-
-        if (Physics.Raycast(ray, out hit, Mathf.Infinity, raycastLayerMask))
+        // Comprovem si es prem la tecla F per alternar l'estat de 'isHitObjectActive'
+        if (Input.GetKeyDown(KeyCode.F))
         {
-            // Obtenir l'objecte amb el qual ha impactat el raig
-            GameObject hitObject = hit.collider.gameObject;
-            m_targetObject.transform.position = hit.point; // Movem el cilindre al punt d'impacte
+            isHitObjectActive = !isHitObjectActive;
 
-            // Calcular la dist‡ncia entre la c‡mera i el punt d'impacte
-            float distance = Vector3.Distance(ExternalCamera.transform.position, hit.point);
+            // Activem o desactivem la col¬∑lisi√≥ segons l'estat
+            m_targetCollider.enabled = isHitObjectActive;
+        }
 
-            // Ajustar l'escala del cilindre perquË sembli de la mateixa mida des de la c‡mera
-            // Utilitzem la dist‡ncia per determinar la mida
-            m_targetObject.transform.localScale = new Vector3(targetSize * distance, targetSize * distance, targetSize * distance);
+        // Si el "hit" est√† activat, detectem el raig
+        if (isHitObjectActive)
+        {
+            // Llan√ßar un raig des de la posici√≥ del ratol√≠
+            Ray ray = ExternalCamera.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+
+            if (Physics.Raycast(ray, out hit, Mathf.Infinity, raycastLayerMask))
+            {
+                // Obtenir l'objecte amb el qual ha impactat el raig
+                GameObject hitObject = hit.collider.gameObject;
+                m_targetObject.transform.position = hit.point; // M
+            }
         }
     }
 }
